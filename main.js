@@ -15,7 +15,7 @@ function templateList(filelist, list) {
   return list;
 }
 
-function convertToHTML(title, list, description) {
+function convertToHTML(title, list, body) {
   return `
     <!doctype html>
       <html>
@@ -25,12 +25,7 @@ function convertToHTML(title, list, description) {
         </head>
 
         ${list}
-        
-        <body>
-          <h1><a href="/">WEB</a></h1>
-          <h2>${title}</h2>
-          <p>${description}</p>
-        </body>
+        ${body}
       </html>
     `;
 }
@@ -46,9 +41,10 @@ var app = http.createServer(function (request, response) {
       fs.readdir('./data', function (error, filelist) {
         var title = 'Welcome';
         var description = 'Hello, Node.js';
+        var body = `<h2>${title}</h2> <p>${description}</p>`;
 
         var list = templateList(filelist, list);
-        var template = convertToHTML(title, list, description);
+        var template = convertToHTML(title, list, body);
 
         response.writeHead(200);
         response.end(template);
@@ -57,8 +53,10 @@ var app = http.createServer(function (request, response) {
       fs.readdir('./data', function (error, filelist) {
         fs.readFile(`data/${queryData.id}`, 'utf8', function (err, description) {
           var title = queryData.id;
+          var body = `<h2>${title}</h2> <p>${description}</p>`;
+
           var list = templateList(filelist);
-          var template = convertToHTML(title, list, description);
+          var template = convertToHTML(title, list, body);
 
           response.writeHead(200);
           response.end(template);
@@ -74,4 +72,3 @@ var app = http.createServer(function (request, response) {
 
 });
 app.listen(3000);
-
