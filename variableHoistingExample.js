@@ -26,7 +26,6 @@
             - 1. Cannot re-declare the variable
             - 2. Cannot update or change values
             - 3. Can initialized the value type as `Primitive Types`, such as `Integer`, `Double`, `Long`, `Character`, `Float`
-    
 */
 console.log(foo);
 
