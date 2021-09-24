@@ -18,9 +18,14 @@
             - 1. Cannot re-declare the variable
             - 2. Can change the variable values
         
-        22. val
+        2. val (Static in Java)
             - 1. Cannot re-declare the variable
-            - 2. C
+            - 2. Cannot update or change values when the variable has already initialized
+
+        3. const val
+            - 1. Cannot re-declare the variable
+            - 2. Cannot update or change values
+            - 3. Can initialized the value type as `Primitive Types`, such as `Integer`, `Double`, `Long`, `Character`, `Float`
     
 */
 console.log(foo);
