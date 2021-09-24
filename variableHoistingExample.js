@@ -37,3 +37,13 @@ console.log(foo);
 }
 
 console.log(foo);
+
+
+/*
+    Difference between `&&` and `||`
+*/
+let a = 'Cat' && 'Dog'
+console.log(a);
+
+a = 'Cat' || 'Dog'
+console.log(a);
