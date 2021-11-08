@@ -18,3 +18,4 @@ function printUser(){
 
 var inner = printUser();
 inner();
+// printUser();
