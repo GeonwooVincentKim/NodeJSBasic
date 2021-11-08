@@ -1,11 +1,18 @@
-function outerFunc(){
-    var x = 10;
-    console.log(x + " -> OuterFunc");
-
-    function innerFunc(x){
-        console.log(x + " -> InnerFunc");
-    }
-    innerFunc(x);
+function userInfo(name, age){
+    this.name = name,
+    this.age = age
 }
 
-outerFunc();
+function printUser(){
+    console.log(new userInfo("Vincent", 30));
+    console.log(new userInfo("Kyle", 25));
+    console.log(new userInfo("Rachel", 50));
+
+    var specialUser = function(){
+        console.log(new userInfo("Ralph", 28));
+        console.log(new userInfo("Bricks", 26));
+    };
+    specialUser();
+}
+
+printUser();
