@@ -12,7 +12,9 @@ function printUser(){
         console.log(new userInfo("Ralph", 28));
         console.log(new userInfo("Bricks", 26));
     };
-    specialUser();
+    // specialUser();
+    return specialUser;
 }
 
-printUser();
+var inner = printUser();
+inner();
