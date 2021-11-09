@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>User name <input type="text"></label>
+    <em class="message"></em>
+
+    <script>
+        const input = document.querySelector("input[type=text]");
+        const msg = document.querySelector(".message");
+
+        input.addEventListener('blur', function(){
+            
+            if(input.value.length < 2){
+                msg.innerHTML = "이름은 2자 이상 입력해주세요";
+            } else {
+                console.log(typeof input.value);
+
+                if(isNaN(input.value) == false){
+                    msg.innerHTML = "숫자가 아닌 string 을 입력해주세요";
+                } else {
+                    msg.innerHTML = "";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
