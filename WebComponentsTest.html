@@ -7,18 +7,39 @@
     <title>Document</title>
 </head>
 <body>
-    <custom-style-input></custom-style-input>
+    <custom-style-input name="web-component-test"></custom-style-input>
+    <custom-style-input name="web-component-test">
+        <label>WHOOO</label>
+    </custom-style-input>
+    <!-- <custom-style-input name="web-component-test"></custom-style-input> -->
 
     <script>
         class CustomInput extends HTMLElement {
             connectedCallback(){
+                this.render()
+            }
+
+            render(){
                 let label = document.createElement('label');
-                label.innerHTML = "Please input name : ";
+                // label.innerHTML = innerText;
+                // label.innerHTML = this.innerHTML;
                 this.appendChild(label);
 
                 let input = document.createElement('input');
                 this.appendChild(input);
+
+                let nextLine = document.createElement("br");
+                this.appendChild(nextLine);
             }
+
+            static get observedAttributes(){
+                return ['name', 'innerText']
+            }
+
+            /*
+            attributeChangedCallback(){
+                this.render()
+            }*/
         }
 
         customElements.define("custom-style-input", CustomInput)
