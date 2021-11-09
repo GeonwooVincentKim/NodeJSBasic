@@ -7,10 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <custom-style-input name="web-component-test"></custom-style-input>
-    <custom-style-input name="web-component-test">
-        <label>WHOOO</label>
-    </custom-style-input>
+    <custom-style-input name="web-component-test" innerText="First Input Section : "></custom-style-input>
+    <custom-style-input name="web-component-test" innerText="Second Input Section : "></custom-style-input>
     <!-- <custom-style-input name="web-component-test"></custom-style-input> -->
 
     <script>
@@ -21,8 +19,7 @@
 
             render(){
                 let label = document.createElement('label');
-                // label.innerHTML = innerText;
-                // label.innerHTML = this.innerHTML;
+                label.innerHTML = this.getAttribute("innerText")
                 this.appendChild(label);
 
                 let input = document.createElement('input');

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <custom-input name="testDOM" innerText="HIIIII"></custom-input>
+    <template>
+
+    </template>
+
+    <script>
+        class ShadowDomExample extends HTMLElement {
+            connectedCallback(innerText){
+                this.attachShadow({mode : "open"});
+                this.shadowRoot.innerHTML = `${innerText}`
+            }
+
+            static get observedAttributes(){
+                return ['name', 'innerText']
+            }
+        }
+
+        customElements.define("custom-input", ShadowDomExample)
+    </script>
+</body>
+</html>
