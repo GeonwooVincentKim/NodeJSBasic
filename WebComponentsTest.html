@@ -7,22 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <custom-input></custom-input>
+    <custom-style-input></custom-style-input>
+
     <script>
         class CustomInput extends HTMLElement {
             connectedCallback(){
-                let label = document.createElement("label");
-                label.innerHTML = "Please input name";
-
+                let label = document.createElement('label');
+                label.innerHTML = "Please input name : ";
                 this.appendChild(label);
 
-                let input = document.createElement("input");
+                let input = document.createElement('input');
                 this.appendChild(input);
             }
         }
-    </script>
 
-    <label>User name <input type="text"></label>
-    <em class="label"></em>
+        customElements.define("custom-style-input", CustomInput)
+    </script>
 </body>
 </html>
