@@ -12,9 +12,16 @@ const [const_one, const_two, const_three] = arr;
 
 console.log(const_one, const_two, const_three + " -> Const");
 
+/* Object by Variable */
 var obj = {firstName: "Ungmo", lastName: "Lee"};
 
 var firstName = obj.firstName;
 var lastName = obj.lastName;
 
-console.log(firstName, lastName);
+console.log(firstName, lastName + " -> Object by Variable");
+
+/* Object by Map */
+const newObj = {newFirstName: "Ungmo", newLastName: "Lee"};
+
+const {newLastName, newFirstName} = newObj;
+console.log(newFirstName, newLastName + " -> Object by Map");
