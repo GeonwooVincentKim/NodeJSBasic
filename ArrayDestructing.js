@@ -25,3 +25,27 @@ console.log(firstName, lastName + " -> Object by Variable");
 
 const {newLastName, newFirstName} = {newFirstName: "Ungmo", newLastName: "Lee"};
 console.log(newFirstName, newLastName + " -> Object by Map");
+
+var variable = 10;
+(() => {
+    console.log(variable);
+    
+    var variable = 20;
+    console.log(variable);
+
+    var variable = 30;
+})();
+console.log(variable);
+
+console.log("------------------")
+
+var good = 10;
+{
+    console.log(good);
+
+    var good = 20;
+    console.log(good);
+    
+    var good = 30;
+}
+console.log(good);
