@@ -12,7 +12,7 @@ Prefixer.prototype.prefixArray = function(arr){
     });
 }
 
-var pref = Prefixer("Hi");
+var pref = new Prefixer("Hi");
 
 console.log(pref);
 console.log(pref.prefixArray(['Lee', 'Kim']));
