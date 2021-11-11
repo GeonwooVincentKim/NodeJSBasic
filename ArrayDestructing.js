@@ -21,7 +21,7 @@ var lastName = obj.lastName;
 console.log(firstName, lastName + " -> Object by Variable");
 
 /* Object by Map */
-const newObj = {newFirstName: "Ungmo", newLastName: "Lee"};
+// const newObj = {newFirstName: "Ungmo", newLastName: "Lee"};
 
-const {newLastName, newFirstName} = newObj;
+const {newLastName, newFirstName} = {newFirstName: "Ungmo", newLastName: "Lee"};
 console.log(newFirstName, newLastName + " -> Object by Map");
