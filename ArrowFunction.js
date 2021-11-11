@@ -3,16 +3,15 @@
 // }
 function Prefixer(prefix){
     this.prefix = prefix;
+    console.log(this.prefix + " -> Before create Instance of Prefixer");
 }
 
 Prefixer.prototype.prefixArray = function(arr){
-    // (A)
-    return arr.map(function (x){
-        return this.prefix + ' ' + x; // (B)
-    });
+    return arr.map(x => `${this.prefix} ${x}`)
 }
 
 var pref = new Prefixer("Hi");
 
 console.log(pref);
+console.log(pref.prefix + " -> Prefix");
 console.log(pref.prefixArray(['Lee', 'Kim']));
