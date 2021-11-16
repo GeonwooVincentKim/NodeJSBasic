@@ -1,0 +1,5 @@
+*{margin: 0 auto; padding: 0px;}
+div {background: #eaeaed; color: #666; display: inline-block; width: 90px; height: 90px; line-height: 90px; margin: 0 14px; text-align: center;}
+.border-rounded {border-radius: 5px;}
+.border-circle {border-radius: 50%;}
+.border-football {border-radius: 15px 75px;}
